@@ -67,20 +67,54 @@
     <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido" required><br><br>
     <label for="edad">Edad:</label>
     <input type="number" id="edad" name="edad" placeholder="Ingresa tu edad" required ><br><br>
+    <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+    <input type="date" id="fechaNacimiento" name="fechaNacimiento" required><br><br>
     <label for="contrasena">Contraseña:</label>
     <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña army" required ><br><br>
 
     <label for="cancion">Canción favorita:</label>
     <select id="cancion" name="cancion">
       <option value="Elije">Elije</option>
-      <option value="Dope">Dope</option>
-      <option value="Fake Love">Fake Love</option>
+      <option value="No More Dream">No More Dream</option>
+      <option value="I Like It">I Like It</option>
+      <option value="N.O">N.O</option>
+      <option value="We On">We On</option>
+      <option value="I Like It Pt. 2">I Like It Pt. 2</option>
+      <option value="Boy in Luv">Boy in Luv</option>
+      <option value="Danger">Danger</option>
+      <option value="I Need U">I Need U</option>
+      <option value="Run">Run</option>
       <option value="Blood Sweat & Tears">Blood Sweat & Tears</option>
-      <option value="Mic Drop">Mic Drop</option>
-      <option value="Idol">Idol</option>
-      <option value="Boy With Luv">Boy With Luv</option>
       <option value="Spring Day">Spring Day</option>
-      <option value="Not Today">Not Today</option>
+      <option value="DNA">DNA</option>
+      <option value="Fake Love">Fake Love</option>
+      <option value="IDOL">IDOL</option>
+      <option value="Boy with Luv (Feat. Halsey)">Boy with Luv (Feat. Halsey)</option>
+      <option value="ON">ON</option>
+      <option value="Life Goes On">Life Goes On</option>
+      <option value="Butter">Butter</option>
+      <option value="permission to dance">permission to dance</option>
+      <option value="Dynamite">Dynamite</option>
+      <option value="yet to come">yet to come</option>
+      <option value="run bts">run bts</option>
+      <option value="take two">take two</option>
+  
+    </select><br><br>
+
+    <label for="album">Álbum Favorito:</label>
+    <select id="album" name="album">
+      <option value="Elige">Elige</option>
+      <option value="2 Cool 4 Skool">2 Cool 4 Skool</option>
+      <option value="Dark & Wild">Dark & Wild</option>
+      <option value="The Most Beautiful Moment in Life, Part 1">The Most Beautiful Moment in Life, Part 1</option>
+      <option value="The Most Beautiful Moment in Life, Part 2">The Most Beautiful Moment in Life, Part 2</option>
+      <option value="Wings">Wings</option>
+      <option value="You Never Walk Alone">You Never Walk Alone</option>
+      <option value="Love Yourself: Her">Love Yourself: Her</option>
+      <option value="Love Yourself: Tear">Love Yourself: Tear</option>
+      <option value="Love Yourself: Answer">Love Yourself: Answer</option>
+      <option value="Map of the Soul: Persona">Map of the Soul: Persona</option>
+      <option value="Map of the Soul: 7">Map of the Soul: 7</option>
     </select><br><br>
 
     <label for="miembro">(Bias) Miembro favorito:</label><br><br>
@@ -113,8 +147,10 @@
         <th>Nombre</th>
         <th>Apellido</th>
         <th>Edad</th>
+        <th>Fecha de Nacimiento</th>
         <th>Contraseña</th>
         <th>Canción favorita</th>
+        <th>Álbum Favorito</th>
         <th>(Bias) Miembro favorito</th>
       </tr>
     </thead>
@@ -132,19 +168,20 @@
       const nombre = obtenerValor('nombre');
       const apellido = obtenerValor('apellido');
       const edad = obtenerValor('edad');
+      const fechaNacimiento = obtenerValor('fechaNacimiento');
       const contrasena = obtenerValor('contrasena');
       const cancion = obtenerValor('cancion');
+      const album = obtenerValor('album');
       const miembro = document.querySelector('input[name="miembro"]:checked') ? document.querySelector('input[name="miembro"]:checked').value : '';
 
       const fila = document.createElement('tr');
       tablaDatos.appendChild(fila);
 
-      ['nombre', 'apellido', 'edad', 'contrasena', 'cancion'].forEach(id => {
+      ['nombre', 'apellido', 'edad', 'fechaNacimiento', 'contrasena', 'cancion', 'album'].forEach(id => {
         const celda = document.createElement('td');
         celda.textContent = obtenerValor(id);
         fila.appendChild(celda);
       });
-
 
       const celdaMiembro = document.createElement('td');
       celdaMiembro.textContent = miembro;
@@ -156,6 +193,7 @@
 
 </body>
 </html>
+
 
 
 
