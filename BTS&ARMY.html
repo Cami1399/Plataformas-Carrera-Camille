@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BTS</title>
+  <style>
+    /* Estilos para la tabla */
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+    
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+    
+    th {
+      background-color: #e6e6e6; 
+    }
+
+    /* Estilos generales */
+    body {
+      background-color: #f4f0f9; 
+      font-family: Arial, sans-serif; /* Fuente para mejorar la legibilidad */
+    }
+
+    label {
+      color: #4b0082; 
+    }
+
+    input, select {
+      border: 1px solid #8a2be2; 
+      border-radius: 4px;
+      padding: 6px;
+    }
+
+    input[type="submit"], input[type="reset"] {
+      background-color: #8a2be2; 
+      color: #fff;
+      cursor: pointer;
+      border: none;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-top: 10px;
+    }
+
+    input[type="submit"]:hover, input[type="reset"]:hover {
+      background-color: #6a1c8a; 
+    }
+
+    h1, h2 {
+      color: #4b0082; 
+    }
+  </style>
+</head>
+<body>
+  <h1> HI ARMY</h1>
+  <p1> Adorable Representative M.C. for Youth </p1><br><br>
+
+  <!-- Formulario -->
+  <form id="formulario">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Ingresa tu nombre"><br><br>
+    <label for="apellido">Apellido:</label>
+    <input type="text" id="apellido" name="apellido" placeholder="Ingresa tu apellido"><br><br>
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" name="edad" placeholder="Ingresa tu edad"><br><br>
+
+    <label for="contrasena">Contraseña:</label>
+    <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña"><br><br>
+
+    <label for="cancion">Canción favorita:</label>
+    <select id="cancion" name="cancion">
+      <option value="Elije">Elije</option>
+      <option value="Dope">Dope</option>
+      <option value="Fake Love">Fake Love</option>
+      <option value="Blood Sweat & Tears">Blood Sweat & Tears</option>
+      <option value="Mic Drop">Mic Drop</option>
+      <option value="Idol">Idol</option>
+      <option value="Boy With Luv">Boy With Luv</option>
+      <option value="Spring Day">Spring Day</option>
+      <option value="Not Today">Not Today</option>
+    </select><br><br>
+
+    <label for="miembro">Miembro favorito:</label><br><br>
+    <input type="radio" id="RM" name="miembro" value="RM">
+    <label for="RM">RM</label><br><br>
+    <input type="radio" id="Jin" name="miembro" value="Jin">
+    <label for="Jin">Jin</label><br><br>
+    <input type= "radio" id="Suga" name="miembro" value="Suga">
+    <label for="Suga">Suga</label><br><br>
+    <input type="radio" id="J-hope" name="miembro" value="J-hope">
+    <label for="j-hope">J-hope</label><br><br>  
+    <input type="radio" id="jimin" name="miembro" value="Jimin">
+    <label for="jimin">Jimin</label><br><br>
+    <input type="radio" id="v" name="miembro" value="V">
+    <label for="v">V</label><br><br>
+    <input type="radio" id="jungkook" name="miembro" value="Jungkook">
+    <label for="jungkook">Jungkook</label><br>
+
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Limpiar">
+  </form>
+
+  <!-- Tabla -->
+  <h2>Datos ingresados:</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Edad</th>
+        <th>Contraseña</th>
+        <th>Canción favorita</th>
+        <th>Miembro favorito</th>
+      </tr>
+    </thead>
+    <tbody id="tablaDatos"></tbody>
+  </table>
+
+  <script>
+    const formulario = document.getElementById('formulario');
+    const tablaDatos = document.getElementById('tablaDatos');
+
+    formulario.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const obtenerValor = (id) => document.getElementById(id).value;
+      const nombre = obtenerValor('nombre');
+      const apellido = obtenerValor('apellido');
+      const edad = obtenerValor('edad');
+      const contrasena = obtenerValor('contrasena');
+      const cancion = obtenerValor('cancion');
+      const miembro = document.querySelector('input[name="miembro"]:checked') ? document.querySelector('input[name="miembro"]:checked').value : '';
+
+      const fila = document.createElement('tr');
+      tablaDatos.appendChild(fila);
+
+      ['nombre', 'apellido', 'edad', 'contrasena', 'cancion', 'miembro'].forEach(id => {
+        const celda = document.createElement('td');
+        celda.textContent = obtenerValor(id);
+        fila.appendChild(celda);
+      });
+
+      formulario.reset();
+    });
+  </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
