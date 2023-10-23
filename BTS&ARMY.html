@@ -73,8 +73,8 @@
     <input type="password" id="contrasena" name="contrasena" placeholder="Ingresa tu contraseña army" required ><br><br>
 
     <label for="cancion">Canción favorita:</label>
-    <select id="cancion" name="cancion">
-      <option value="Elije">Elije</option>
+    <select id="cancion" name="cancion" required > 
+      <option value="">Elije</option>
       <option value="No More Dream">No More Dream</option>
       <option value="I Like It">I Like It</option>
       <option value="N.O">N.O</option>
@@ -102,8 +102,8 @@
     </select><br><br>
 
     <label for="album">Álbum Favorito:</label>
-    <select id="album" name="album">
-      <option value="Elige">Elige</option>
+    <select id="album" name="album"required > 
+      <option value="">Elije</option>
       <option value="2 Cool 4 Skool">2 Cool 4 Skool</option>
       <option value="Dark & Wild">Dark & Wild</option>
       <option value="The Most Beautiful Moment in Life, Part 1">The Most Beautiful Moment in Life, Part 1</option>
@@ -149,8 +149,8 @@
         <th>Edad</th>
         <th>Fecha de Nacimiento</th>
         <th>Contraseña</th>
-        <th>Canción favorita</th>
         <th>Álbum Favorito</th>
+        <th>Canción favorita</th>
         <th>(Bias) Miembro favorito</th>
       </tr>
     </thead>
@@ -177,7 +177,7 @@
       const fila = document.createElement('tr');
       tablaDatos.appendChild(fila);
 
-      ['nombre', 'apellido', 'edad', 'fechaNacimiento', 'contrasena', 'cancion', 'album'].forEach(id => {
+      ['nombre', 'apellido', 'edad', 'fechaNacimiento', 'contrasena', 'album' , 'cancion'].forEach(id => {
         const celda = document.createElement('td');
         celda.textContent = obtenerValor(id);
         fila.appendChild(celda);
